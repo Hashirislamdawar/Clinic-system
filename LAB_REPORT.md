@@ -5,6 +5,10 @@
 **Roll No.:** 22PWCSE2192
 **Submitted to:** Engr. Summayea Salahuddin
 **Date:** 20 June 2026
+**Repository:** [github.com/Hashirislamdawar/Clinic-system](https://github.com/Hashirislamdawar/Clinic-system)
+
+> 🔗 **Full source code, database script and runnable project:**
+> <https://github.com/Hashirislamdawar/Clinic-system>
 
 ---
 
@@ -350,7 +354,7 @@ something that resembles a real product.
 
 ## 12. Deliverables Checklist
 
-- [x] **Source code** — `backend/` and `frontend/` (zip or GitHub link).
+- [x] **Source code** — <https://github.com/Hashirislamdawar/Clinic-system>
 - [x] **Database script** — `backend/schema.sql` (PostgreSQL DDL) + `backend/alembic/` migrations.
 - [x] **Automated tests** — `backend/tests/` (pytest).
 - [x] **Lab report** — this document (schema, ER diagram, screenshots and analysis).
