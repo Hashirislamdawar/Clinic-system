@@ -34,6 +34,7 @@ import Avatar from "../components/ui/Avatar.jsx";
 import Button from "../components/ui/Button.jsx";
 import Skeleton from "../components/ui/Skeleton.jsx";
 import { StatusBadge } from "../components/ui/Badge.jsx";
+import { useAuth } from "../context/AuthContext.jsx";
 
 const STATUS_COLORS = {
   Scheduled: "#2563eb",
@@ -75,6 +76,7 @@ export default function Dashboard() {
   const [data, setData] = useState(null);
   const [failed, setFailed] = useState(false);
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   useEffect(() => {
     let active = true;
@@ -131,7 +133,7 @@ export default function Dashboard() {
       <div className="page-head">
         <div>
           <h1 className="h-hero">
-            {greeting()} <span style={{ opacity: 0.4 }}>·</span> Admin
+            {greeting()} <span style={{ opacity: 0.4 }}>·</span> {user?.full_name || "there"}
           </h1>
           <p>Here's what's happening at City Clinic today.</p>
         </div>
