@@ -1,0 +1,169 @@
+<svg width="1110" height="800" viewBox="0 0 1110 800" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text{font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+    .bg{fill:#ffffff}
+    .ttl{font-size:19px;font-weight:700;fill:#0f172a}
+    .ent{fill:#ffffff;stroke:#d4dce6;stroke-width:1.2}
+    .etitle{font-size:13.5px;font-weight:700;fill:#0f172a}
+    .div{stroke:#e2e8f0;stroke-width:1}
+    .col{font-size:12px;fill:#334155;font-family:'Consolas','Courier New',monospace}
+    .pk{fill:#2563eb;font-weight:700}
+    .tag{fill:#94a3b8;font-size:10.5px;font-weight:700}
+    .rel{stroke:#94a3b8;stroke-width:1.6;fill:none}
+    .card{font-size:11px;font-weight:700;fill:#2563eb}
+    .dot{fill:#94a3b8}
+    .lg{font-size:12px;fill:#475569}
+    .lgt{font-size:13px;font-weight:700;fill:#0f172a}
+  </style>
+  <rect class="bg" x="0" y="0" width="1110" height="800"/>
+  <text class="ttl" x="30" y="30">City Clinic — Entity-Relationship Diagram</text>
+
+  <!-- ===== Relationship lines (drawn first, under boxes) ===== -->
+  <!-- specializations 1 -> N doctors -->
+  <path class="rel" d="M240 85 L300 100"/>
+  <circle class="dot" cx="240" cy="85" r="3"/><circle class="dot" cx="300" cy="100" r="3"/>
+  <text class="card" x="247" y="82">1</text><text class="card" x="285" y="97">N</text>
+  <!-- doctors 1 -> N appointments -->
+  <path class="rel" d="M520 150 L580 235"/>
+  <circle class="dot" cx="520" cy="150" r="3"/><circle class="dot" cx="580" cy="235" r="3"/>
+  <text class="card" x="524" y="146">1</text><text class="card" x="566" y="233">N</text>
+  <!-- patients 1 -> N appointments -->
+  <path class="rel" d="M240 345 L580 330"/>
+  <circle class="dot" cx="240" cy="345" r="3"/><circle class="dot" cx="580" cy="330" r="3"/>
+  <text class="card" x="247" y="341">1</text><text class="card" x="566" y="326">N</text>
+  <!-- appointments 1 -> 1 prescriptions -->
+  <path class="rel" d="M810 290 L870 130"/>
+  <circle class="dot" cx="810" cy="290" r="3"/><circle class="dot" cx="870" cy="130" r="3"/>
+  <text class="card" x="814" y="287">1</text><text class="card" x="858" y="135">1</text>
+  <!-- prescriptions 1 -> N prescription_items -->
+  <path class="rel" d="M975 182 L975 250"/>
+  <circle class="dot" cx="975" cy="182" r="3"/><circle class="dot" cx="975" cy="250" r="3"/>
+  <text class="card" x="981" y="200">1</text><text class="card" x="981" y="244">N</text>
+  <!-- medications 1 -> N prescription_items -->
+  <path class="rel" d="M975 470 L975 412"/>
+  <circle class="dot" cx="975" cy="470" r="3"/><circle class="dot" cx="975" cy="412" r="3"/>
+  <text class="card" x="981" y="458">1</text><text class="card" x="981" y="424">N</text>
+
+  <!-- ===== SPECIALIZATIONS ===== -->
+  <g>
+    <rect class="ent" x="30" y="44" width="210" height="84" rx="9"/>
+    <text class="etitle" x="44" y="64">specializations</text>
+    <line class="div" x1="30" y1="72" x2="240" y2="72"/>
+    <text class="col" x="44" y="92"><tspan class="pk">PK</tspan> id</text>
+    <text class="col" x="44" y="112">name <tspan class="tag">UK</tspan></text>
+  </g>
+
+  <!-- ===== PATIENTS ===== -->
+  <g>
+    <rect class="ent" x="30" y="250" width="210" height="184" rx="9"/>
+    <text class="etitle" x="44" y="270">patients</text>
+    <line class="div" x1="30" y1="278" x2="240" y2="278"/>
+    <text class="col" x="44" y="298"><tspan class="pk">PK</tspan> id</text>
+    <text class="col" x="44" y="318">full_name</text>
+    <text class="col" x="44" y="338">email <tspan class="tag">UK</tspan></text>
+    <text class="col" x="44" y="358">gender</text>
+    <text class="col" x="44" y="378">date_of_birth</text>
+    <text class="col" x="44" y="398">version</text>
+    <text class="col" x="44" y="418">deleted_at</text>
+  </g>
+
+  <!-- ===== USERS ===== -->
+  <g>
+    <rect class="ent" x="30" y="600" width="210" height="144" rx="9"/>
+    <text class="etitle" x="44" y="620">users</text>
+    <line class="div" x1="30" y1="628" x2="240" y2="628"/>
+    <text class="col" x="44" y="648"><tspan class="pk">PK</tspan> id</text>
+    <text class="col" x="44" y="668">email <tspan class="tag">UK</tspan></text>
+    <text class="col" x="44" y="688">password_hash</text>
+    <text class="col" x="44" y="708">role</text>
+    <text class="col" x="44" y="728">is_active</text>
+  </g>
+
+  <!-- ===== DOCTORS ===== -->
+  <g>
+    <rect class="ent" x="300" y="44" width="220" height="184" rx="9"/>
+    <text class="etitle" x="314" y="64">doctors</text>
+    <line class="div" x1="300" y1="72" x2="520" y2="72"/>
+    <text class="col" x="314" y="92"><tspan class="pk">PK</tspan> id</text>
+    <text class="col" x="314" y="112">full_name</text>
+    <text class="col" x="314" y="132">email <tspan class="tag">UK</tspan></text>
+    <text class="col" x="314" y="152">specialization_id <tspan class="tag">FK</tspan></text>
+    <text class="col" x="314" y="172">consultation_fee</text>
+    <text class="col" x="314" y="192">version</text>
+    <text class="col" x="314" y="212">deleted_at</text>
+  </g>
+
+  <!-- ===== AUDIT_LOGS ===== -->
+  <g>
+    <rect class="ent" x="300" y="600" width="220" height="164" rx="9"/>
+    <text class="etitle" x="314" y="620">audit_logs</text>
+    <line class="div" x1="300" y1="628" x2="520" y2="628"/>
+    <text class="col" x="314" y="648"><tspan class="pk">PK</tspan> id</text>
+    <text class="col" x="314" y="668">action</text>
+    <text class="col" x="314" y="688">entity</text>
+    <text class="col" x="314" y="708">entity_id</text>
+    <text class="col" x="314" y="728">actor</text>
+    <text class="col" x="314" y="748">created_at</text>
+  </g>
+
+  <!-- ===== APPOINTMENTS ===== -->
+  <g>
+    <rect class="ent" x="580" y="180" width="230" height="204" rx="9"/>
+    <text class="etitle" x="594" y="200">appointments</text>
+    <line class="div" x1="580" y1="208" x2="810" y2="208"/>
+    <text class="col" x="594" y="228"><tspan class="pk">PK</tspan> id</text>
+    <text class="col" x="594" y="248">patient_id <tspan class="tag">FK</tspan></text>
+    <text class="col" x="594" y="268">doctor_id <tspan class="tag">FK</tspan></text>
+    <text class="col" x="594" y="288">appointment_date</text>
+    <text class="col" x="594" y="308">start_time</text>
+    <text class="col" x="594" y="328">status</text>
+    <text class="col" x="594" y="348">version</text>
+    <text class="col" x="594" y="368">deleted_at</text>
+  </g>
+
+  <!-- ===== PRESCRIPTIONS ===== -->
+  <g>
+    <rect class="ent" x="870" y="60" width="210" height="124" rx="9"/>
+    <text class="etitle" x="884" y="80">prescriptions</text>
+    <line class="div" x1="870" y1="88" x2="1080" y2="88"/>
+    <text class="col" x="884" y="108"><tspan class="pk">PK</tspan> id</text>
+    <text class="col" x="884" y="128">appointment_id <tspan class="tag">FK·UK</tspan></text>
+    <text class="col" x="884" y="148">diagnosis</text>
+    <text class="col" x="884" y="168">notes</text>
+  </g>
+
+  <!-- ===== PRESCRIPTION_ITEMS ===== -->
+  <g>
+    <rect class="ent" x="870" y="250" width="210" height="164" rx="9"/>
+    <text class="etitle" x="884" y="270">prescription_items</text>
+    <line class="div" x1="870" y1="278" x2="1080" y2="278"/>
+    <text class="col" x="884" y="298"><tspan class="pk">PK</tspan> id</text>
+    <text class="col" x="884" y="318">prescription_id <tspan class="tag">FK</tspan></text>
+    <text class="col" x="884" y="338">medication_id <tspan class="tag">FK</tspan></text>
+    <text class="col" x="884" y="358">dosage</text>
+    <text class="col" x="884" y="378">frequency</text>
+    <text class="col" x="884" y="398">duration_days</text>
+  </g>
+
+  <!-- ===== MEDICATIONS ===== -->
+  <g>
+    <rect class="ent" x="870" y="470" width="210" height="102" rx="9"/>
+    <text class="etitle" x="884" y="490">medications</text>
+    <line class="div" x1="870" y1="498" x2="1080" y2="498"/>
+    <text class="col" x="884" y="518"><tspan class="pk">PK</tspan> id</text>
+    <text class="col" x="884" y="538">name <tspan class="tag">UK</tspan></text>
+    <text class="col" x="884" y="558">form</text>
+  </g>
+
+  <!-- ===== Legend ===== -->
+  <g>
+    <rect class="ent" x="560" y="600" width="520" height="160" rx="9"/>
+    <text class="lgt" x="576" y="624">Legend</text>
+    <line class="div" x1="560" y1="634" x2="1080" y2="634"/>
+    <text class="lg" x="576" y="656"><tspan class="pk" style="font-family:Consolas,monospace">PK</tspan> primary key   ·   <tspan class="tag" style="font-size:12px">FK</tspan> foreign key   ·   <tspan class="tag" style="font-size:12px">UK</tspan> unique</text>
+    <text class="lg" x="576" y="680"><tspan class="card" style="font-size:12px">1 —— N</tspan>  one-to-many        <tspan class="card" style="font-size:12px">1 —— 1</tspan>  one-to-one</text>
+    <text class="lg" x="576" y="708">Every table also carries created_at / updated_at timestamps.</text>
+    <text class="lg" x="576" y="728">Core entities add version (optimistic lock) + deleted_at (soft delete).</text>
+    <text class="lg" x="576" y="748">users &amp; audit_logs are standalone (no foreign keys). Schema is in 3NF.</text>
+  </g>
+</svg>

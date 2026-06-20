@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+backend/.venv/
+backend/.env
+backend/clinic.db
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+
+# Editor / tooling (personal config — not part of the submission)
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
